@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MVCtop10XML.Models.kelimeModel>
+@{
+                /**/
+
+                ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h2>The most frequent 10 words in the book</h2>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Word</th>
+                <th scope="col">Count</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int i = 1;
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@i</th>
+                        <td>@Html.DisplayFor(modelItem => item.Text1)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Count1)</td>
+
+                    </tr>
+                    i++;
+                }
+            }
+
+
+
+
+        </tbody>
+    </table>
+</div>
